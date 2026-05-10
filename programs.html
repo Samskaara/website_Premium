@@ -1,27 +1,106 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Programs - Samskaara Vriksham</title>
 
     <link rel="stylesheet" href="css/styles.css">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+
+        /* =========================
+           CARD LINK
+        ========================= */
+
+        .program-link {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+
+        .circle-card {
+            cursor: pointer;
+        }
+
+        /* =========================
+           QUICK VIEW BUTTON
+        ========================= */
+
+        .quick-btn {
+            margin-top: 10px;
+            display: inline-block;
+            padding: 7px 14px;
+            font-size: 12px;
+            border-radius: 20px;
+            background: #1b5e20;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .quick-btn:hover {
+            background: #145a18;
+        }
+
+        /* =========================
+           MODAL
+        ========================= */
+
+        .modal-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .modal {
+            background: white;
+            width: 90%;
+            max-width: 420px;
+            border-radius: 18px;
+            padding: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .modal h3 {
+            color: #1b5e20;
+            margin-bottom: 10px;
+        }
+
+        .modal p {
+            font-size: 14px;
+            color: #444;
+            line-height: 1.6;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            font-size: 20px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+    </style>
 </head>
 
 <body>
 
-<a href="https://wa.me/919900048624"
-   class="whatsapp-float"
-   target="_blank">
+<a href="https://wa.me/919900048624" class="whatsapp-float" target="_blank">
     💬 Lets Connect
 </a>
 
 <header>
 
-    <img src="images/SamskaaraLogo.png"
-         class="logo"
-         alt="Samskaara Vriksham Logo">
+    <img src="images/SamskaaraLogo.png" class="logo" alt="Samskaara Vriksham Logo">
 
     <h1>Samskaara Vriksham</h1>
 
@@ -42,354 +121,209 @@
 
 <!-- HERO -->
 <div class="hero" style="padding:60px 20px;">
-
     <div class="hero-content">
-
-        <h2 class="hero-title"
-            style="font-size:34px; margin-bottom:10px;">
-
-            Our Programs
-
-        </h2>
-
+        <h2 class="hero-title" style="font-size:34px;">Our Programs</h2>
         <p style="font-size:16px; max-width:700px; margin:auto;">
-
             Structured pathways for holistic development of children and prenatal transformation.
-
         </p>
-
     </div>
-
 </div>
 
 <div class="container">
 
-    <!-- 🌱 SAMSKAARA -->
+    <!-- ================= SAMSKAARA ================= -->
     <div class="program-section">
 
         <div class="section-heading">
-
-            <h2 class="section-title"
-                style="font-size:32px; margin-bottom:8px;">
-
-                Samskaara
-
-            </h2>
-
+            <h2 class="section-title">Samskaara</h2>
             <p class="section-subtitle">
-
-                Holistic child development programs focused on values,
-                confidence, discipline, creativity, and leadership.
-
+                Holistic child development programs.
             </p>
-
         </div>
 
         <div class="circle-grid">
 
-            <a href="https://forms.gle/VW9nfLMutMTzNAFb9"
-               target="_blank"
-               class="program-link">
-
+            <!-- ANKURAM -->
+            <a href="https://forms.gle/VW9nfLMutMTzNAFb9" target="_blank" class="program-link">
                 <div class="circle-card">
-
                     <div class="circle-icon">🌱</div>
-
                     <h4>Ankuram</h4>
-
-                    <p>
-                        Values, habits, and emotional awareness.
-                    </p>
-
+                    <p>Values, habits, emotional awareness.</p>
+                    <span class="quick-btn"
+                        onclick="event.preventDefault(); event.stopPropagation(); openModal('Ankuram','Foundational character building, emotional intelligence, and mindful habits.')">
+                        Quick View
+                    </span>
                 </div>
-
             </a>
 
-            <a href="https://forms.gle/VW9nfLMutMTzNAFb9"
-               target="_blank"
-               class="program-link">
-
+            <!-- DEEPAM -->
+            <a href="https://forms.gle/VW9nfLMutMTzNAFb9" target="_blank" class="program-link">
                 <div class="circle-card">
-
                     <div class="circle-icon">🔥</div>
-
                     <h4>Deepam</h4>
-
-                    <p>
-                        Discipline, focus, and leadership.
-                    </p>
-
+                    <p>Discipline, focus, leadership.</p>
+                    <span class="quick-btn"
+                        onclick="event.preventDefault(); event.stopPropagation(); openModal('Deepam','Focus, discipline, and leadership development.')">
+                        Quick View
+                    </span>
                 </div>
-
             </a>
 
-            <a href="https://forms.gle/VW9nfLMutMTzNAFb9"
-               target="_blank"
-               class="program-link">
-
+            <!-- DHARMARATNA -->
+            <a href="https://forms.gle/VW9nfLMutMTzNAFb9" target="_blank" class="program-link">
                 <div class="circle-card">
-
                     <div class="circle-icon">💡</div>
-
                     <h4>Dharmaratna</h4>
-
-                    <p>
-                        Creativity and communication skills.
-                    </p>
-
+                    <p>Creativity and communication.</p>
+                    <span class="quick-btn"
+                        onclick="event.preventDefault(); event.stopPropagation(); openModal('Dharmaratna','Enhances creativity, expression, and communication skills.')">
+                        Quick View
+                    </span>
                 </div>
-
             </a>
 
-            <a href="https://forms.gle/VW9nfLMutMTzNAFb9"
-               target="_blank"
-               class="program-link">
-
+            <!-- GITA VIDYA -->
+            <a href="https://forms.gle/VW9nfLMutMTzNAFb9" target="_blank" class="program-link">
                 <div class="circle-card">
-
                     <div class="circle-icon">👑</div>
-
                     <h4>Gita Vidya</h4>
-
-                    <p>
-                        Leadership and decision-making.
-                    </p>
-
+                    <p>Leadership and decision-making.</p>
+                    <span class="quick-btn"
+                        onclick="event.preventDefault(); event.stopPropagation(); openModal('Gita Vidya','Wisdom, ethics, leadership, and decision-making skills.')">
+                        Quick View
+                    </span>
                 </div>
-
             </a>
 
         </div>
-
     </div>
 
-    <!-- 🤰 GARBHA SAMSKAARA -->
-    <div class="program-section"
-         style="margin-top:80px;">
+    <!-- ================= GARBHA SAMSKAARA ================= -->
+    <div class="program-section" style="margin-top:80px;">
 
         <div class="section-heading">
-
-            <h2 class="section-title"
-                style="font-size:32px; margin-bottom:8px;">
-
-                Garbha Samskaara
-
-            </h2>
-
+            <h2 class="section-title">Garbha Samskaara</h2>
             <p class="section-subtitle">
-
-                Prenatal wellness programs designed to nurture emotional balance,
-                mindful motherhood, and holistic pregnancy preparation.
-
+                Prenatal wellness programs.
             </p>
-
         </div>
 
         <div class="circle-grid">
 
-            <a href="https://forms.gle/JAQhPoVRQ36QSWD99"
-               target="_blank"
-               class="program-link">
-
+            <a href="https://forms.gle/JAQhPoVRQ36QSWD99" target="_blank" class="program-link">
                 <div class="circle-card">
-
                     <div class="circle-icon">🧘</div>
-
                     <h4>Dhyanam</h4>
-
-                    <p>
-                        Calm and emotional balance.
-                    </p>
-
+                    <p>Calm and emotional balance.</p>
+                    <span class="quick-btn"
+                        onclick="event.preventDefault(); event.stopPropagation(); openModal('Dhyanam','Mindfulness and emotional wellness practices.')">
+                        Quick View
+                    </span>
                 </div>
-
             </a>
 
-            <a href="https://forms.gle/JAQhPoVRQ36QSWD99"
-               target="_blank"
-               class="program-link">
-
+            <a href="https://forms.gle/JAQhPoVRQ36QSWD99" target="_blank" class="program-link">
                 <div class="circle-card">
-
                     <div class="circle-icon">💞</div>
-
                     <h4>Matrutvam</h4>
-
-                    <p>
-                        Bonding and maternal awareness.
-                    </p>
-
+                    <p>Bonding and awareness.</p>
+                    <span class="quick-btn"
+                        onclick="event.preventDefault(); event.stopPropagation(); openModal('Matrutvam','Strengthens maternal bonding and awareness.')">
+                        Quick View
+                    </span>
                 </div>
-
             </a>
 
-            <a href="https://forms.gle/JAQhPoVRQ36QSWD99"
-               target="_blank"
-               class="program-link">
-
+            <a href="https://forms.gle/JAQhPoVRQ36QSWD99" target="_blank" class="program-link">
                 <div class="circle-card">
-
                     <div class="circle-icon">🌸</div>
-
                     <h4>Paripurnam</h4>
-
-                    <p>
-                        Holistic childbirth preparation.
-                    </p>
-
+                    <p>Holistic childbirth preparation.</p>
+                    <span class="quick-btn"
+                        onclick="event.preventDefault(); event.stopPropagation(); openModal('Paripurnam','Complete prenatal emotional and physical preparation.')">
+                        Quick View
+                    </span>
                 </div>
-
             </a>
 
         </div>
-
     </div>
 
-    <!-- 🧮 VEDIC MATH -->
-    <div class="program-section"
-         style="margin-top:80px;">
+    <!-- ================= VEDIC MATH ================= -->
+    <div class="program-section" style="margin-top:80px;">
 
         <div class="section-heading">
-
-            <h2 class="section-title"
-                style="font-size:32px; margin-bottom:8px;">
-
-                Vedic Mathematics
-
-            </h2>
-
-            <p class="section-subtitle">
-
-                Ancient mathematical techniques that improve speed,
-                concentration, logical thinking, and numerical confidence.
-
-            </p>
-
+            <h2 class="section-title">Vedic Mathematics</h2>
         </div>
 
         <div class="circle-grid">
 
-            <a href="https://forms.gle/NGszzsbTQyNMCDPR6"
-               target="_blank"
-               class="program-link">
-
+            <a href="https://forms.gle/NGszzsbTQyNMCDPR6" target="_blank" class="program-link">
                 <div class="circle-card">
-
                     <div class="circle-icon">➗</div>
-
                     <h4>Speed & Clarity</h4>
-
-                    <p>
-                        Fast calculations using ancient techniques.
-                    </p>
-
+                    <p>Fast calculation techniques.</p>
+                    <span class="quick-btn"
+                        onclick="event.preventDefault(); event.stopPropagation(); openModal('Speed & Clarity','Ancient Vedic methods for faster calculations.')">
+                        Quick View
+                    </span>
                 </div>
-
             </a>
 
         </div>
-
     </div>
 
-    <!-- 🎶 CARNATIC MUSIC -->
-    <div class="program-section"
-         style="margin-top:80px;">
+    <!-- ================= CARNATIC MUSIC ================= -->
+    <div class="program-section" style="margin-top:80px;">
 
         <div class="section-heading">
-
-            <h2 class="section-title"
-                style="font-size:32px; margin-bottom:8px;">
-
-                Carnatic Music
-
-            </h2>
-
-            <p class="section-subtitle">
-
-                Classical music training that nurtures discipline,
-                concentration, expression, and cultural appreciation.
-
-            </p>
-
+            <h2 class="section-title">Carnatic Music</h2>
         </div>
 
         <div class="circle-grid">
 
-            <a href="https://forms.gle/6tz7YpjZUcw7j78h7"
-               target="_blank"
-               class="program-link">
-
+            <a href="https://forms.gle/6tz7YpjZUcw7j78h7" target="_blank" class="program-link">
                 <div class="circle-card">
-
                     <div class="circle-icon">🎵</div>
-
                     <h4>Rhythm & Soul</h4>
-
-                    <p>
-                        Tradition, discipline, and expression.
-                    </p>
-
+                    <p>Tradition and expression.</p>
+                    <span class="quick-btn"
+                        onclick="event.preventDefault(); event.stopPropagation(); openModal('Rhythm & Soul','Classical music training for discipline and expression.')">
+                        Quick View
+                    </span>
                 </div>
-
             </a>
 
         </div>
-
     </div>
 
 </div>
 
-<footer class="site-footer">
+<!-- ================= MODAL ================= -->
 
-    <div class="footer-links">
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal()">
 
-        <a href="privacy-policy.html">Privacy Policy</a>
-        <a href="shipping-policy.html">Shipping Policy</a>
-        <a href="refund-return-policy.html">Refund & Return Policy</a>
-        <a href="terms-conditions.html">Terms & Conditions</a>
-        <a href="join-our-team.html">Join Our Team</a>
-
+    <div class="modal" onclick="event.stopPropagation()">
+        <span class="close-btn" onclick="closeModal()">×</span>
+        <h3 id="modalTitle"></h3>
+        <p id="modalText"></p>
     </div>
 
-    <div class="social-links">
+</div>
 
-        <a href="https://www.instagram.com/samskaara_vriksham/"
-           target="_blank">
+<script>
 
-            <img src="images/instagram.png"
-                 alt="Instagram">
+function openModal(title, text) {
+    document.getElementById("modalTitle").innerText = title;
+    document.getElementById("modalText").innerText = text;
+    document.getElementById("modalOverlay").style.display = "flex";
+}
 
-        </a>
+function closeModal() {
+    document.getElementById("modalOverlay").style.display = "none";
+}
 
-        <a href="https://www.facebook.com/SamskaaraVirksham/"
-           target="_blank">
-
-            <img src="images/facebook.png"
-                 alt="Facebook">
-
-        </a>
-
-        <a href="https://www.linkedin.com/in/vidya-shree-g-0a568635/"
-           target="_blank">
-
-            <img src="images/linkedin.png"
-                 alt="LinkedIn">
-
-        </a>
-
-        <a href="https://www.youtube.com/@Samskaara_Vriksham"
-           target="_blank">
-
-            <img src="images/youtube.png"
-                 alt="YouTube">
-
-        </a>
-
-    </div>
-
-    <p>© 2026 Samskaara Vriksham. All Rights Reserved.</p>
-
-</footer>
+</script>
 
 </body>
 </html>
