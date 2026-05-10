@@ -765,13 +765,11 @@ nav a:hover {
 /* =========================================
    SCROLLING ANNOUNCEMENT TAPE
 ========================================= */
-
 .announcement-bar {
     background: linear-gradient(90deg, #2e7d32, #43a047, #66bb6a);
-    color: white;
     overflow: hidden;
-    position: relative;
     padding: 13px 0;
+    position: relative;
     border-top: 1px solid rgba(255,255,255,0.15);
     border-bottom: 1px solid rgba(255,255,255,0.15);
 }
@@ -779,29 +777,30 @@ nav a:hover {
 .announcement-track {
     display: flex;
     width: max-content;
-    white-space: nowrap;
-    animation: scrollTape 25s linear infinite;
+    animation: marquee 18s linear infinite;
+    will-change: transform;
 }
 
 .announcement-content {
-    display: inline-block;
+    flex: 0 0 auto;
     white-space: nowrap;
     font-size: 15px;
     font-weight: 600;
-    letter-spacing: 0.5px;
+    color: white;
     padding-right: 80px;
 }
 
-/* KEY FIX: move by actual content width, not 50% */
-@keyframes scrollTape {
+/* KEY FIX: shift exactly half of total track (since duplicated) */
+@keyframes marquee {
     from {
         transform: translateX(0);
     }
     to {
-        transform: translateX(-100%);
+        transform: translateX(-50%);
     }
 }
 
+/* pause on hover */
 .announcement-bar:hover .announcement-track {
     animation-play-state: paused;
 }
