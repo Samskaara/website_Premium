@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Samskaara Vriksham</title>
+
+    <link rel="stylesheet" href="css/styles.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        /* =========================
+           MODERN PREMIUM LANDING
+        ========================== */
+
+        body {
+            background: #f8faf8;
+        }
+
+        /* HERO */
+        .premium-hero {
+            min-height: 92vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 30px;
+            position: relative;
+            overflow: hidden;
+
+            background:
+                linear-gradient(rgba(10, 35, 15, 0.70), rgba(16, 73, 28, 0.72)),
+                url('images/hero-bg.jpg');
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .premium-hero::before {
+            content: "";
+            position: absolute;
+            width: 600px;
+            height: 600px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 50%;
+            top: -250px;
+            right: -180px;
+            filter: blur(10px);
+        }
+
+        .premium-hero::after {
+            content: "";
+            position: absolute;
+            width: 450px;
+            height: 450px;
+            background: rgba(255,255,255,0.04);
+            border-radius: 50%;
+            bottom: -200px;
+            left: -120px;
+        }
+
+        .hero-wrapper {
+            max-width: 1200px;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr;
+            gap: 50px;
+            align-items: center;
+            z-index: 2;
+        }
+
+        .hero-text h1 {
+            font-size: 64px;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            font-family: 'Playfair Display', serif;
+            color: white;
+        }
+
+        .hero-text p {
+            font-size: 19px;
+            line-height: 1.9;
+            color: rgba(255,255,255,0.92);
+            margin-bottom: 35px;
+            max-width: 650px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            padding: 14px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.3s ease;
+        }
+
+        .hero-btn.primary {
+            background: white;
+            color: #1b5e20;
+        }
+
+        .hero-btn.primary:hover {
+            transform: translateY(-3px);
+        }
+
+        .hero-btn.secondary {
+            border: 1px solid rgba(255,255,255,0.4);
+            color: white;
+            backdrop-filter: blur(10px);
+        }
+
+        .hero-btn.secondary:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        /* HERO CARD */
+        .hero-card {
+            background: rgba(255,255,255,0.10);
+            border: 1px solid rgba(255,255,255,0.15);
+            backdrop-filter: blur(12px);
+            border-radius: 24px;
+            padding: 35px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+        }
+
+        .hero-card h3 {
+            color: white;
+            font-size: 26px;
+            margin-bottom: 20px;
+        }
+
+        .hero-points {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+        }
+
+        .hero-point {
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .hero-icon {
+            width: 52px;
+            height: 52px;
+            border-radius: 14px;
+            background: rgba(255,255,255,0.14);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            flex-shrink: 0;
+        }
+
+        .hero-point h4 {
+            color: white;
+            margin-bottom: 5px;
+            font-size: 17px;
+        }
+
+        .hero-point p {
+            color: rgba(255,255,255,0.82);
+            font-size: 14px;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* SECTION */
+        .premium-section {
+            padding: 90px 20px;
+        }
+
+        .section-heading {
+            text-align: center;
+            max-width: 800px;
+            margin: auto auto 55px auto;
+        }
+
+        .section-heading h2 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .section-heading p {
+            color: #666;
+            font-size: 17px;
+        }
+
+        /* PREMIUM GRID */
+        .premium-grid {
+            max-width: 1200px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 28px;
+        }
+
+        /* GLASS CARD */
+        .premium-card {
+            background: white;
+            border-radius: 22px;
+            padding: 35px 28px;
+            text-align: center;
+            transition: 0.35s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+            border: 1px solid rgba(0,0,0,0.04);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .premium-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, #1b5e20, #66bb6a);
+        }
+
+        .premium-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+
+        .premium-icon {
+            width: 90px;
+            height: 90px;
+            margin: auto auto 20px auto;
+            border-radius: 24px;
+            background: linear-gradient(135deg, #1b5e20, #43a047);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            box-shadow: 0 10px 25px rgba(67,160,71,0.25);
+        }
+
+        .premium-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .premium-card p {
+            color: #666;
+            line-height: 1.8;
+        }
+
+        /* HIGHLIGHT STRIP */
+        .highlight-strip {
+            margin: 40px auto 0 auto;
+            max-width: 1200px;
+            background: linear-gradient(135deg, #1b5e20, #43a047);
+            border-radius: 28px;
+            padding: 45px;
+            color: white;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+            text-align: center;
+        }
+
+        .highlight-strip h3 {
+            color: white;
+            font-size: 38px;
+            margin-bottom: 5px;
+        }
+
+        .highlight-strip p {
+            color: rgba(255,255,255,0.85);
+        }
+
+        /* CTA */
+        .premium-cta {
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .cta-box {
+            max-width: 950px;
+            margin: auto;
+            background: white;
+            border-radius: 30px;
+            padding: 65px 40px;
+            box-shadow: 0 18px 50px rgba(0,0,0,0.08);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-box::before {
+            content: "";
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(67,160,71,0.08);
+            border-radius: 50%;
+            top: -120px;
+            right: -80px;
+        }
+
+        .cta-box h2 {
+            font-size: 44px;
+            margin-bottom: 15px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .cta-box p {
+            max-width: 700px;
+            margin: auto auto 30px auto;
+            color: #666;
+            font-size: 17px;
+        }
+
+        .cta-actions {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        /* MOBILE */
+        @media (max-width: 900px) {
+
+            .hero-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .hero-text {
+                text-align: center;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .hero-text h1 {
+                font-size: 46px;
+            }
+
+            .section-heading h2 {
+                font-size: 34px;
+            }
+
+            .cta-box h2 {
+                font-size: 34px;
+            }
+
+            .highlight-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+
+            .premium-hero {
+                min-height: auto;
+                padding: 70px 20px;
+            }
+
+            .hero-text h1 {
+                font-size: 38px;
+            }
+
+            .hero-text p {
+                font-size: 16px;
+            }
+
+            .hero-card {
+                padding: 28px;
+            }
+
+            .section-heading h2 {
+                font-size: 28px;
+            }
+
+            .premium-card {
+                padding: 28px 22px;
+            }
+
+            .highlight-strip {
+                grid-template-columns: 1fr;
+                padding: 35px;
+            }
+
+            .cta-box {
+                padding: 50px 25px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+<a href="https://wa.me/919900048624"
+   class="whatsapp-float"
+   target="_blank">
+    💬 Lets Connect
+</a>
+
+<header>
+
+    <img src="images/SamskaaraLogo.png"
+         class="logo"
+         alt="Samskaara Vriksham Logo">
+
+    <h1>Samskaara Vriksham</h1>
+
+    <p>Raise Rooted, Confident & Culturally Aware Children</p>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="about.html">Our Story</a>
+        <a href="programs.html">Programs</a>
+        <a href="books.html">Books</a>
+        <a href="gallery.html">Gallery</a>
+        <a href="testimonials.html">Testimonials</a>
+        <a href="blogs.html">Blogs</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="premium-hero">
+
+    <div class="hero-wrapper">
+
+        <div class="hero-text">
+
+            <h1>
+                Nurturing Values.<br>
+                Shaping Futures.
+            </h1>
+
+            <p>
+                Samskaara Vriksham empowers children and parents through
+                mindful learning, cultural awareness, emotional strength,
+                and holistic growth rooted in timeless values.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="programs.html"
+                   class="hero-btn primary">
+                    Explore Programs
+                </a>
+
+                <a href="contact.html"
+                   class="hero-btn secondary">
+                    Enroll Now
+                </a>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT GLASS CARD -->
+
+        <div class="hero-card">
+
+            <h3>What Children Gain</h3>
+
+            <div class="hero-points">
+
+                <div class="hero-point">
+                    <div class="hero-icon">🌿</div>
+
+                    <div>
+                        <h4>Strong Values</h4>
+                        <p>Respect, discipline and mindful habits.</p>
+                    </div>
+                </div>
+
+                <div class="hero-point">
+                    <div class="hero-icon">🧠</div>
+
+                    <div>
+                        <h4>Emotional Strength</h4>
+                        <p>Balanced confidence and resilience.</p>
+                    </div>
+                </div>
+
+                <div class="hero-point">
+                    <div class="hero-icon">🏛️</div>
+
+                    <div>
+                        <h4>Cultural Awareness</h4>
+                        <p>Connection to roots, tradition and identity.</p>
+                    </div>
+                </div>
+
+                <div class="hero-point">
+                    <div class="hero-icon">🚀</div>
+
+                    <div>
+                        <h4>Future Readiness</h4>
+                        <p>Communication, focus and leadership skills.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- OUTCOMES -->
+
+<section class="premium-section">
+
+    <div class="section-heading">
+
+        <h2>What Your Child Becomes</h2>
+
+        <p>
+            A nurturing ecosystem that helps children grow academically,
+            emotionally, socially, and culturally.
+        </p>
+
+    </div>
+
+    <div class="premium-grid">
+
+        <div class="premium-card">
+
+            <div class="premium-icon">🌸</div>
+
+            <h3>Respectful & Grounded</h3>
+
+            <p>
+                Children develop humility, kindness,
+                gratitude and strong moral values.
+            </p>
+
+        </div>
+
+        <div class="premium-card">
+
+            <div class="premium-icon">🗣️</div>
+
+            <h3>Confident Expression</h3>
+
+            <p>
+                Improved communication skills,
+                stage confidence and clarity.
+            </p>
+
+        </div>
+
+        <div class="premium-card">
+
+            <div class="premium-icon">📘</div>
+
+            <h3>Academic Readiness</h3>
+
+            <p>
+                Better focus, discipline and
+                structured learning habits.
+            </p>
+
+        </div>
+
+        <div class="premium-card">
+
+            <div class="premium-icon">💛</div>
+
+            <h3>Emotional Balance</h3>
+
+            <p>
+                Mindfulness and emotional awareness
+                for resilient growth.
+            </p>
+
+        </div>
+
+    </div>
+
+    <!-- STATS -->
+
+    <div class="highlight-strip">
+
+        <div>
+            <h3>4–14</h3>
+            <p>Years Age Group</p>
+        </div>
+
+        <div>
+            <h3>100%</h3>
+            <p>Holistic Learning</p>
+        </div>
+
+        <div>
+            <h3>Mindful</h3>
+            <p>Value-Based Programs</p>
+        </div>
+
+        <div>
+            <h3>Rooted</h3>
+            <p>Cultural Awareness</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- WHY FAMILIES CHOOSE -->
+
+<section class="premium-section"
+         style="background:#ffffff;">
+
+    <div class="section-heading">
+
+        <h2>Why Families Choose Us</h2>
+
+        <p>
+            A balanced approach that blends values,
+            confidence, mindfulness and joyful learning.
+        </p>
+
+    </div>
+
+    <div class="premium-grid">
+
+        <div class="premium-card">
+
+            <div class="premium-icon">🌿</div>
+
+            <h3>Cultural Connection</h3>
+
+            <p>
+                Helping children stay rooted in
+                tradition while growing confidently.
+            </p>
+
+        </div>
+
+        <div class="premium-card">
+
+            <div class="premium-icon">📚</div>
+
+            <h3>Balanced Growth</h3>
+
+            <p>
+                Combining academics, emotional intelligence
+                and values seamlessly.
+            </p>
+
+        </div>
+
+        <div class="premium-card">
+
+            <div class="premium-icon">🤝</div>
+
+            <h3>Involved Parenting</h3>
+
+            <p>
+                Supporting parents to become
+                mindful and aware guides.
+            </p>
+
+        </div>
+
+        <div class="premium-card">
+
+            <div class="premium-icon">✨</div>
+
+            <h3>Holistic Development</h3>
+
+            <p>
+                Encouraging curiosity, discipline,
+                creativity and self-belief.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CTA -->
+
+<section class="premium-cta">
+
+    <div class="cta-box">
+
+        <h2>
+            Begin Your Child’s Transformation Journey
+        </h2>
+
+        <p>
+            Join Samskaara Vriksham and help your child
+            grow into a confident, grounded and emotionally
+            strong individual.
+        </p>
+
+        <div class="cta-actions">
+
+            <a href="programs.html"
+               class="hero-btn primary"
+               style="background:#1b5e20;color:white;">
+                Explore Programs
+            </a>
+
+            <a href="contact.html"
+               class="hero-btn secondary"
+               style="color:#1b5e20;border:1px solid #1b5e20;">
+                Enroll Now
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer class="site-footer">
+
+    <div class="footer-links">
+
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="shipping-policy.html">Shipping Policy</a>
+        <a href="refund-return-policy.html">Refund & Return Policy</a>
+        <a href="terms-conditions.html">Terms & Conditions</a>
+        <a href="join-our-team.html">Join Our Team</a>
+
+    </div>
+
+    <div class="social-links">
+
+        <a href="https://www.instagram.com/samskaara_vriksham/" target="_blank">
+            <img src="images/instagram.png" alt="Instagram">
+        </a>
+
+        <a href="https://www.facebook.com/SamskaaraVirksham/" target="_blank">
+            <img src="images/facebook.png" alt="Facebook">
+        </a>
+
+        <a href="https://www.linkedin.com/in/vidya-shree-g-0a568635/" target="_blank">
+            <img src="images/linkedin.png" alt="LinkedIn">
+        </a>
+
+        <a href="https://www.youtube.com/@Samskaara_Vriksham" target="_blank">
+            <img src="images/youtube.png" alt="YouTube">
+        </a>
+
+    </div>
+
+    <p>© 2026 Samskaara Vriksham. All Rights Reserved.</p>
+
+</footer>
+
+</body>
+</html>
